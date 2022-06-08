@@ -23,4 +23,7 @@ $ npm install
 # Running the tests
 $ npm test
 
+# Running tests for a certain Question
+$ npm run test "<question-Name>"
+
 ```
