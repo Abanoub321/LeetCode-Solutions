@@ -13,19 +13,14 @@
 import ListNode from "../Interfaces/ListNode";
 
 function middleNode(head: ListNode | null): ListNode | null {
-    let pointer = head;
-    let cntr = 1;
-    while (pointer?.next !== null) {
-        pointer = pointer!.next;
-        cntr++;
+    let slow = head;
+    let fast = head;
+    
+    while (fast && fast.next) {
+        slow = slow!.next;
+        fast = fast.next!.next;
     }
-    let mid = Math.floor(cntr / 2);
-    pointer = head;
-    while (mid > 0) {
-        pointer = pointer!.next;
-        mid--;
-    }
-    return pointer;
+    return slow;
 };
 
 export default middleNode;
