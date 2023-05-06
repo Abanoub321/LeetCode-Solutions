@@ -3,7 +3,8 @@ function makesquare(matchsticks: number[]): boolean {
     if (sum % 4 !== 0) return false;
     const side = sum / 4;
     const sides = [0, 0, 0, 0];
-    return dfs(matchsticks, sides, side, 0);
+    let sortedMatchsticks = matchsticks.sort((a, b) => b - a);
+    return dfs(sortedMatchsticks, sides, side, 0);
 };
 
 function dfs(matchsticks: number[], sides: number[], side: number, index: number): boolean {
