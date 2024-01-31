@@ -23,6 +23,7 @@ jobs:
             readme=$(find "$folder" -type f -name 'README.md' | sort -r | head -n 1)
             if [[ -f "$readme" ]]; then
               difficulty=$(grep -o '\[Difficulty: [^]]*\]' "$readme" | head -n 1)
+              echo "Found $difficulty in $readme"
               case "$difficulty" in
                 "[Difficulty: Easy]") ((easy_count++));;
                 "[Difficulty: Medium]") ((medium_count++));;
