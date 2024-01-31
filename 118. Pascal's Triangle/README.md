@@ -1,6 +1,6 @@
 # [118. Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/)
 
-> ## Easy
+> ## Difficulty: Easy
 
 Given an integer `numRows`, return the first numRows of **Pascal's triangle**.
 

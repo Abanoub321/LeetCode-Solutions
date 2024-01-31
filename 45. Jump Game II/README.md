@@ -1,6 +1,6 @@
 # [45. Jump Game II](https://leetcode.com/problems/jump-game-ii/)
 
-> Medium
+> Difficulty: Medium
 
 Given an array of non-negative integers `nums`, you are initially positioned at the first index of the array.
 

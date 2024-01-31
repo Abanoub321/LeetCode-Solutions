@@ -1,6 +1,6 @@
 # [1048. Longest String Chain](https://leetcode.com/problems/longest-string-chain/)
 
-> ## Medium
+> ## Difficulty: Medium
 
 You are given an array of `words` where each word consists of lowercase English letters.
 
