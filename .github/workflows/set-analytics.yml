@@ -22,7 +22,7 @@ jobs:
           for folder in */; do
             readme=$(find "$folder" -type f -name 'README.md' | sort -r | head -n 1)
             if [[ -f "$readme" ]]; then
-              difficulty=$(grep -o '\[Difficulty: [^]]*\]' "$readme" | head -n 1)
+              difficulty=$(grep -oE '\[Difficulty: (Easy|Medium|Hard)\]' "$readme" | head -n 1)
               echo "Found $difficulty in $readme"
               case "$difficulty" in
                 "[Difficulty: Easy]") ((easy_count++));;
