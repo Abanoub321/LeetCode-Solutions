@@ -1,0 +1,43 @@
+name: Update Problem Statistics
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Traverse through folders and count difficulties
+        run: |
+          easy_count=0
+          medium_count=0
+          hard_count=0
+
+          for folder in */; do
+            readme=$(find "$folder" -type f -name 'README.md' | sort -r | head -n 1)
+            if [[ -f "$readme" ]]; then
+              difficulty=$(grep -o '\[Difficulty: [^]]*\]' "$readme" | head -n 1)
+              case "$difficulty" in
+                "[Difficulty: Easy]") ((easy_count++));;
+                "[Difficulty: Medium]") ((medium_count++));;
+                "[Difficulty: Hard]") ((hard_count++));;
+                *) echo "Unknown difficulty level in $readme";;
+              esac
+            fi
+          done
+
+          echo "::set-output name=easy_count::$easy_count"
+          echo "::set-output name=medium_count::$medium_count"
+          echo "::set-output name=hard_count::$hard_count"
+
+      - name: Update README.md
+        run: |
+          sed -i "s/\[EASY_COUNT\]/${{ steps.update-stats.outputs.easy_count }}/g" README.md
+          sed -i "s/\[MEDIUM_COUNT\]/${{ steps.update-stats.outputs.medium_count }}/g" README.md
+          sed -i "s/\[HARD_COUNT\]/${{ steps.update-stats.outputs.hard_count }}/g" README.md
