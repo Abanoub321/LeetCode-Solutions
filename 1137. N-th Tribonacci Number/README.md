@@ -1,6 +1,6 @@
 # [1137. N-th Tribonacci Number](https://leetcode.com/problems/n-th-tribonacci-number/)
 
-> ## Easy
+> ## Difficulty: Easy
 
 The Tribonacci sequence Tn is defined as follows:
 

@@ -1,6 +1,6 @@
 # [120. Triangle](https://leetcode.com/problems/triangle/)
 
-> ## Medium
+> ## Difficulty: Medium
 
 Given a `triangle` array, return the minimum path sum from top to bottom.
 

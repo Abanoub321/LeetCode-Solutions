@@ -1,6 +1,6 @@
 # [1695. Maximum Erasure Value](https://leetcode.com/problems/maximum-erasure-value/)
 
-> ## Medium
+> ## Difficulty: Medium
 
 You are given an array of positive integers `nums` and want to erase a subarray containing **unique elements**. The **score** you get by erasing the subarray is equal to the **sum** of its elements.
 

@@ -1,6 +1,6 @@
 # [1332. Remove Palindromic Subsequences](https://leetcode.com/problems/remove-palindromic-subsequences/)
 
-> ## Easy
+> ## Difficulty: Easy
 
 You are given a string `s` consisting **only** of letters `'a'` and `'b'`. In a single step you can remove one **palindromic subsequence** from `s`.
 
